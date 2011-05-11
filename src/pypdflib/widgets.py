@@ -80,20 +80,11 @@ class Widget(object):
         
 class Paragraph(Widget):
     
-    def __init__(self,  text = None, markup = None, font = None, text_align = None, font_size = None):
+    def __init__(self,  text = None, markup = None, font = 'Sans', text_align = pango.ALIGN_LEFT, font_size = 10):
         super(Paragraph,self).__init__()
-        if font:
-            self.font = font
-        else:
-            self.font = "Sans"    
-        if font_size:
-            self.font_size = font_size
-        else:
-            self.font_size = 10   
-        if text_align:
-            self.text_align = text_align
-        else:
-            self.text_align = pango.ALIGN_LEFT
+        self.font = font
+        self.font_size = font_size
+        self.text_align = text_align
         if markup:
             self.is_markup = True
             self.text = markup
